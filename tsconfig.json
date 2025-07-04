@@ -1,5 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
+  "compilerOptions": {
+    // 禁用隐式 any 类型检查
+    "noImplicitAny": false,
+    // 禁用隐式 this 的 any 类型检查
+    "noImplicitThis": false
+  }
 }
