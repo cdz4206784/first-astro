@@ -1,4 +1,8 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';  // 引入全局样式
+
 const pageTitle = '关于我'
 
 const identity = {
@@ -14,6 +18,11 @@ const happy = true
 const finished = false
 const goal = 3
 
+// 定义css变量
+const skillColor = 'navy'
+const fontWeight = 'bold'
+const textCase = 'capitalize'
+
 ---
 <html lang="en">
   <head>
@@ -22,11 +31,20 @@ const goal = 3
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+        .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
+        }
+    </style>
   </head>
   <body>
-    <a href="/">首页</a>
-    <a href="/about">关于</a>
-    <a href="/blog/">博客</a>
+    <Header />
 
 
     <h1>{pageTitle}</h1>
@@ -52,12 +70,17 @@ const goal = 3
     </ul>
     <p>我的技能是：</p>
     <ul>
-        { skills.map((skill) => <li>{skill}</li>)}
+        { skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>我非常乐意学习 Astro！</p>}
     {finished && <p>我完成了这节教程！</p>}
     {goal === 3 ? <p>我的目标是在三天内完成。</p> : <p>我的目标不是 3 天。</p>}
 
+
+    <Footer />
+    <script>
+     import '../scripts/menu'
+    </script>
   </body>
 </html>
