@@ -11,7 +11,11 @@
   "dependencies": {
     "@astrojs/preact": "^4.1.0",
     "@astrojs/rss": "^4.0.12",
+    "@astrojs/vue": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.10.2",
-    "preact": "^10.26.9"
+    "preact": "^10.26.9",
+    "tailwindcss": "^4.1.11",
+    "vue": "^3.5.17"
   }
 }

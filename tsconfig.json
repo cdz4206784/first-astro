@@ -10,7 +10,7 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "jsxImportSource": "preact"
   }
 }
